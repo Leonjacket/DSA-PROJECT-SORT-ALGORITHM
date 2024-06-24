@@ -18,6 +18,7 @@ void selection_sort(int*& a, int n){
 void selection_sort_cmp(int*& a, int n, int& cmp) {
     cmp = 0;
     for (int i = 0; i < n - 1; i++) {
+        cmp++;
         int min = i;
         for (int j = i + 1; j < n; j++) {
             cmp++;
@@ -31,10 +32,10 @@ void selection_sort_cmp(int*& a, int n, int& cmp) {
     }
 }
 
-void selection_sort_time(int*& a, int n, int& dur) {
-    clock_t start, end;
-    start = clock(); 
+void selection_sort_time(int*& a, int n, double& dur)
+{
+    auto start = chrono::high_resolution_clock::now();
     selection_sort(a, n);
-    end = clock(); 
-    dur = static_cast<int>(end - start); 
+    auto end = chrono::high_resolution_clock::now();
+    dur = chrono::duration<double, milli>(end - start).count();
 }
