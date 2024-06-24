@@ -58,12 +58,10 @@ void counting_sort_cmp(int*& arr, int n, int& cmp){
     delete[] count;
 }
 
-void counting_sort_time(int*& arr, int n, int& dur) {
-    clock_t start, end;
-    start = clock();
-
-    counting_sort(arr, n);
-
-    end = clock();
-    dur = static_cast<int>(end - start);
+void flash_sort_time(int*& a, int n, double& dur)
+{
+    auto start = chrono::high_resolution_clock::now();
+    counting_sort(a, n);
+    auto end = chrono::high_resolution_clock::now();
+    dur = chrono::duration<double, milli>(end - start).count();
 }
