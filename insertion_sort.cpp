@@ -21,11 +21,13 @@ void insertion_sort_cmp(int a[], int n, int &cmp)
     cmp = 0;
     for (int i = 1; i < n; i++)
     {
+        cmp++;
         int cur = a[i];
         int j = i - 1;
 
         while (++cmp && j >= 0 && a[j] > cur)
         {
+            
             a[j + 1] = a[j];
             j--;
         }
