@@ -18,7 +18,7 @@ void quick_sort_cmp(int *&a, int size, int &cmp); //hàm phụ cho quick sort cm
 void partition_cmp(int *&a, int l, int r, int e, int &cmp); //hàm phụ cho quick sort cmp
 void bubble_sort(int *&a, int size);
 void bubble_sort_cmp(int *&a, int size, int &cmp); 
-void bubble_sort_time(int *&a, int size, double &time);
-void shaker_sort(int *&a, int size);
+void bubble_sort_time(int *&a, int size, double &dur);
+void shaker_sort(int *&a, int size); //tham khảo ở https://www.youtube.com/watch?v=dpSxj2Ps7DI
 void shaker_sort_cmp(int *&a, int size, int &cmp);
-void shaker_sort_time(int *&a, int size, double &time);
+void shaker_sort_time(int *&a, int size, double &dur);
