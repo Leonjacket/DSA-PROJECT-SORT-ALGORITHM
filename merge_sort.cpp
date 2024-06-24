@@ -99,10 +99,10 @@ void merge_sort_cmp(int*& a, int size, int& cmp){
     delete[] r;
 }
 
-void merge_sort_time(int*& a, int size, int& dur){
-    clock_t start, end;
-    start = clock();
-    merge_sort(a, size);
-    end = clock();
-    dur = static_cast<int>(end - start);
+void merge_sort_time(int*& a, int n, double& dur)
+{
+    auto start = chrono::high_resolution_clock::now();
+    merge_sort(a, n);
+    auto end = chrono::high_resolution_clock::now();
+    dur = chrono::duration<double, milli>(end - start).count();
 }
