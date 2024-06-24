@@ -44,7 +44,7 @@ void bubble_sort_cmp(int *&a, int size, int &cmp)
 	}
 	++cmp;
 }
-void bubble_sort_time(int *&a, int size, double &time)
+void bubble_sort_time(int *&a, int size, double &dur)
 {
 	auto start = chrono::high_resolution_clock::now();
     bubble_sort(a, size);
