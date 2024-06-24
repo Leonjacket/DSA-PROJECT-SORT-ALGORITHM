@@ -1,6 +1,6 @@
 #include "bach.h"
 
-void counting_sort(int* arr, int n){
+void counting_sort(int*& arr, int n){
     if (n <= 1) return;
 
     int max = arr[0];
@@ -29,12 +29,14 @@ void counting_sort(int* arr, int n){
 }
 
 void counting_sort_cmp(int*& arr, int n, int& cmp){
-    int cmp = 0;
-     if (n <= 1) return;
+    cmp = 0;
+    if (n <= 1) return;
 
     int max = arr[0];
     for (int i = 0; i < n; i++){
+        cmp++;
         if (arr[i] > max){
+            cmp++;
             max = arr[i];
         }
     }
@@ -42,11 +44,13 @@ void counting_sort_cmp(int*& arr, int n, int& cmp){
     int* count = new int[max + 1]();
 
     for (int i = 0; i < n; i++){
+        cmp++;
         count[arr[i]]++;
     }
 
     int t = 0;
     for (int i = 0; i < max; i++){
+        cmp++;
         if (count[i] > 0){
             arr[t] = i;
             t++;
@@ -58,7 +62,7 @@ void counting_sort_cmp(int*& arr, int n, int& cmp){
     delete[] count;
 }
 
-void flash_sort_time(int*& a, int n, double& dur)
+void merge_sort_time(int*& a, int n, double& dur)
 {
     auto start = chrono::high_resolution_clock::now();
     counting_sort(a, n);
