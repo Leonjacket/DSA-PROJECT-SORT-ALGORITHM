@@ -16,3 +16,4 @@ void quick_sort_algo(int *&a, int s, int e); //hàm phụ cho quick sort
 void quick_sort(int *&a, int size); // tham khảo ở  https://youtu.be/pM-6r5xsNEY?si=U1rUfohX2kWGmz4M
 void quick_sort_cmp(int *&a, int size, int &cmp); //hàm phụ cho quick sort cmp
 void partition_cmp(int *&a, int l, int r, int e, int &cmp); //hàm phụ cho quick sort cmp
+void quick_sort_time(int *&a, int size, int &dur);
