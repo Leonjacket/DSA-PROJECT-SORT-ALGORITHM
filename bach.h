@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <cstring>
 #include <fstream>
 #include <time.h>
 using namespace std;
@@ -10,12 +11,8 @@ typedef __darwin_clock_t clock_t;
 typedef unsigned long __darwin_clock_t; /* clock() */
 #define CLOCKS_PER_SEC  1000000    /* [XSI] */
 
-void selectionSort(int arr, int n);
+void selection_sort(int*& a, int n);
 
-void sortFile(const char* inName, const char*outName);
+void selection_sort_cmp(int*& a, int n, int& cmp);
 
-void merge(int l[], int r[], int a[], int size);
-
-void mergeSort(int a[], int size);
-
-void sortFile(const char* inName, const char*outName);
+void selection_sort_time(int*& a, int n, int& dur);
