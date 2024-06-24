@@ -77,11 +77,13 @@ void heap_sort_cmp(int a[], int n, int &cmp)
     cmp = 0;
     for (int i = n / 2 - 1; i >= 0; i--)
     {
+        cmp++;
         heapify_cmp(a, n, i, cmp);
     }
 
     for (int i = n - 1; i > 0; i--)
     {
+        cmp++;
         swap(a[0], a[i]);
         heapify_cmp(a, i, 0, cmp);
     }
