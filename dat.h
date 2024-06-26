@@ -12,4 +12,4 @@ void flash_sort_time(int*& a, int n, double& dur);
 void shell_sort(int*& a, int n);
 void shell_sort_cmp(int*& a, int n, int& cmp);
 void shell_sort_time(int*& a, int n, float& dur);
-void read_file(string file);
+void read_file(int*&a , int n, string file);
