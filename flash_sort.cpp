@@ -1,5 +1,6 @@
 #include "dat.h"
-
+// https://www.youtube.com/watch?v=CAaDJJUszvE (giải thích cách sort)
+// https://chatgpt.com/c/bb3ec1d8-fc33-4c10-82a0-efc56fa28e33 (code từ chatgpt)
 void flash_sort(int*& a, int n)
 {
     if(n <= 1) return;
@@ -136,4 +137,3 @@ void flash_sort_time(int*& a, int n, double& dur)
     auto end = chrono::high_resolution_clock::now();
     dur = chrono::duration<double, milli>(end - start).count();
 }
-
