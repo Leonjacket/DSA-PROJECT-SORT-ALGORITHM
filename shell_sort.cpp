@@ -1,5 +1,6 @@
 #include "dat.h"
-
+// https://www.youtube.com/watch?v=SHcPqUe2GZM (visualization)
+//https://www.geeksforgeeks.org/shellsort/ (code từ đây)
 void shell_sort(int*& a, int n)
 {
     for(int gap = n / 2; gap > 0; gap /= 2)
