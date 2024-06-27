@@ -1,4 +1,4 @@
-#include "bach.h"
+#include "counting_sort.h"
 
 void counting_sort(int*& arr, int n){
     if (n <= 1) return;
