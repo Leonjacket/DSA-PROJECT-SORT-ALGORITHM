@@ -1,4 +1,6 @@
-#include "manh.h"
+#include <iostream>
+#include <chrono>
+using namespace std;
 
 void swap(int &a, int &b)
 {
@@ -7,7 +9,7 @@ void swap(int &a, int &b)
     b = temp;
 }
 
-void heapify(int a[], int n, int i)
+void max_heapify(int a[], int n, int i)
 {
 
     int largest = i;
@@ -28,7 +30,7 @@ void heapify(int a[], int n, int i)
     if (largest != i)
     {
         swap(a[i], a[largest]);
-        heapify(a, n, largest);
+        max_heapify(a, n, largest);
     }
 }
 
@@ -36,18 +38,17 @@ void heap_sort(int a[], int n)
 {
     for (int i = n / 2 - 1; i >= 0; i--)
     {
-        heapify(a, n, i);
+        max_heapify(a, n, i);
     }
 
     for (int i = n - 1; i > 0; i--)
     {
         swap(a[0], a[i]);
-        heapify(a, i, 0);
+        max_heapify(a, i, 0);
     }
 }
-// The same functions but for comparison counting
 
-void heapify_cmp(int a[], int n, int i, int &cmp)
+void max_heapify_cmp(int a[], int n, int i, int &cmp)
 {
 
     int largest = i;
@@ -68,7 +69,7 @@ void heapify_cmp(int a[], int n, int i, int &cmp)
     if (largest != i && cmp++)
     {
         swap(a[i], a[largest]);
-        heapify_cmp(a, n, largest, cmp);
+        max_heapify_cmp(a, n, largest, cmp);
     }
 }
 
@@ -78,14 +79,14 @@ void heap_sort_cmp(int a[], int n, int &cmp)
     for (int i = n / 2 - 1; i >= 0; i--)
     {
         cmp++;
-        heapify_cmp(a, n, i, cmp);
+        max_heapify_cmp(a, n, i, cmp);
     }
 
     for (int i = n - 1; i > 0; i--)
     {
         cmp++;
         swap(a[0], a[i]);
-        heapify_cmp(a, i, 0, cmp);
+        max_heapify_cmp(a, i, 0, cmp);
     }
 }
 
