@@ -1,12 +1,6 @@
-#ifndef COUNTING_SORT_H
-#define COUNTING_SORT_H
+#pragma once
 
-#include <iostream>
-#include <string>
-#include <cstring>
-#include <fstream>
-#include <chrono>
-using namespace std;
+#include "..\sources\utilities.h"
 
 void counting_sort(int *&arr, int n)
 {
@@ -84,12 +78,10 @@ void counting_sort_cmp(int *&arr, int n, int &cmp)
     delete[] count;
 }
 
-void merge_sort_time(int *&a, int n, double &dur)
+void counting_sort_time(int *&a, int n, double &dur)
 {
     auto start = chrono::high_resolution_clock::now();
     counting_sort(a, n);
     auto end = chrono::high_resolution_clock::now();
     dur = chrono::duration<double, milli>(end - start).count();
 }
-
-#endif

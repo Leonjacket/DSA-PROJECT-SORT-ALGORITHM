@@ -1,9 +1,6 @@
-#ifndef SHELL_SORT_H
-#define SHELL_SORT_H
+#pragma once
 
-#include <iostream>
-#include <chrono>
-using namespace std;
+#include "..\sources\utilities.h"
 
 // https://www.youtube.com/watch?v=SHcPqUe2GZM (visualization)
 // https://www.geeksforgeeks.org/shellsort/ (code từ đây)
@@ -53,5 +50,3 @@ void shell_sort_time(int *&a, int n, double &dur)
     auto end = chrono::high_resolution_clock::now();
     dur = chrono::duration<double, milli>(end - start).count();
 }
-
-#endif

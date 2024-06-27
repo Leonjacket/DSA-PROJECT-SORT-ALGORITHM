@@ -1,19 +1,20 @@
-#include <iostream>
-#include <fstream>
-#include <string>
+#pragma once
 
-using namespace std;
+#include ".\utilities.h"
 
-bool save_file(int* a, unsigned long size, string inName){
+bool save_file(int *a, unsigned long size, string inName)
+{
     ofstream input(inName);
-    if (!input){
+    if (!input)
+    {
         cerr << "Unable to open file!" << endl;
         return false;
     }
 
     input << size << endl;
 
-    for (int i = 0; i < size; i++){
+    for (int i = 0; i < size; i++)
+    {
         input << a[i] << " ";
     }
 

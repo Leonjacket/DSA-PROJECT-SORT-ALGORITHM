@@ -1,9 +1,6 @@
-#ifndef INSERTION_SORT_H
-#define INSERTION_SORT_H
+#pragma once
 
-#include <iostream>
-#include <chrono>
-using namespace std;
+#include "..\sources\utilities.h"
 
 void insertion_sort(int a[], int n)
 {
@@ -47,5 +44,3 @@ void insertion_sort_time(int *&a, int n, double &dur)
     auto end = chrono::high_resolution_clock::now();
     dur = chrono::duration<double, milli>(end - start).count();
 }
-
-#endif

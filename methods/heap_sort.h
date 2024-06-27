@@ -1,16 +1,7 @@
-#ifndef HEAP_SORT_H
-#define HEAP_SORT_H
+#pragma once
 
-#include <iostream>
-#include <chrono>
-using namespace std;
+#include "..\sources\utilities.h"
 
-void swap(int &a, int &b)
-{
-    int temp = a;
-    a = b;
-    b = temp;
-}
 
 void max_heapify(int a[], int n, int i)
 {
@@ -100,5 +91,3 @@ void heap_sort_time(int *&a, int n, double &dur)
     auto end = chrono::high_resolution_clock::now();
     dur = chrono::duration<double, milli>(end - start).count();
 }
-
-#endif

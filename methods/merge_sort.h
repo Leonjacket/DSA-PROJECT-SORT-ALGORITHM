@@ -1,12 +1,6 @@
-#ifndef MERGE_SORT_H
-#define MERGE_SORT_H
+#pragma once
 
-#include <iostream>
-#include <string>
-#include <cstring>
-#include <fstream>
-#include <chrono>
-using namespace std;
+#include "..\sources\utilities.h"
 
 void merge(int *l, int *r, int *a, int size)
 {
@@ -132,5 +126,3 @@ void merge_sort_time(int *&a, int n, double &dur)
     auto end = chrono::high_resolution_clock::now();
     dur = chrono::duration<double, milli>(end - start).count();
 }
-
-#endif

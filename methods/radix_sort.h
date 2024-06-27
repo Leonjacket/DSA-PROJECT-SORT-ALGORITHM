@@ -1,9 +1,7 @@
-#ifndef RADIX_SORT_H
-#define RADIX_SORT_H
+#pragma once
 
-#include <iostream>
-#include <chrono>
-using namespace std;
+#include "..\sources\utilities.h"
+#include ".\counting_sort.h"
 
 void count_sort(int a[], int n, int exp)
 {
@@ -108,5 +106,3 @@ void radix_sort_time(int *&a, int n, double &dur)
     auto end = chrono::high_resolution_clock::now();
     dur = chrono::duration<double, milli>(end - start).count();
 }
-
-#endif

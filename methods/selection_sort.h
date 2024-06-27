@@ -1,12 +1,6 @@
-#ifndef SELECTION_SORT_H
-#define SELECTION_SORT_H
+#pragma once
 
-#include <iostream>
-#include <string>
-#include <cstring>
-#include <fstream>
-#include <chrono>
-using namespace std;
+#include "..\sources\utilities.h"
 
 void selection_sort(int *&a, int n)
 {
@@ -55,5 +49,3 @@ void selection_sort_time(int *&a, int n, double &dur)
     auto end = chrono::high_resolution_clock::now();
     dur = chrono::duration<double, milli>(end - start).count();
 }
-
-#endif
