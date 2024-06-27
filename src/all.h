@@ -8,5 +8,7 @@
 #include "radix_sort.h"
 #include "shaker_sort.h"
 #include "shell_sort.h"
+#include "selection_sort.h"
 #include "read_file.h"
 #include "save_file.h"
+#include "command_line.h"
