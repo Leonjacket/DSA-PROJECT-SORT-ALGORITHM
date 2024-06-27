@@ -106,7 +106,7 @@ void command_line_2(int argc,char* argv[])
         if(input_order == "-rand")
         {
             GenerateData(a, input_size, 0);
-            create_input_file(a); //tạo file input
+            create_input_file(a, input_size); //tạo file input
             int* b =a;
             it->second.first(a, input_size, cmp);
             it->second.second(b, input_size, dur);
@@ -115,7 +115,7 @@ void command_line_2(int argc,char* argv[])
         if(input_order == "-sorted")
         {
             GenerateData(a, input_size, 1);
-            saveFile(a); //tạo file input   
+            create_input_file(a); //tạo file input   
             int* b =a;
             it->second.first(a, input_size, cmp);
             it->second.second(b, input_size, dur);
@@ -180,10 +180,10 @@ void command_line_3(int argc,char* argv[])
     GenerateData(nearly_sorted, size, 3);
     GenerateData(sorted, size, 1);
     GenerateData(reversed, size, 2);
-    writeFile(random, size, filename_1); //ghi file input sau khi generate
-    writeFile(nearly_sorted, size, filename_2);
-    writeFile(sorted, size, filename_3);
-    writeFile(reversed, size, filename_4);
+    create_input_file(random, size, filename_1); //ghi file input sau khi generate
+    create_input_file(nearly_sorted, size, filename_2);
+    create_input_file(sorted, size, filename_3);
+    create_input_file(reversed, size, filename_4);
     int nearly_sorted_cmp = 0;
     double nearly_sorted_dur = 0;
     int random_cmp = 0;
