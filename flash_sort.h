@@ -1,4 +1,6 @@
-#include "dat.h"
+#include <iostream>
+#include <chrono>
+using namespace std;
 // https://www.youtube.com/watch?v=CAaDJJUszvE (giải thích cách sort)
 // https://chatgpt.com/c/bb3ec1d8-fc33-4c10-82a0-efc56fa28e33 (code từ chatgpt)
 void flash_sort(int*& a, int n)
