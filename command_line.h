@@ -62,7 +62,9 @@ void command_line_1(int argc,char* argv[])
     {
         it->second.first(a, size, cmp);
         it->second.second(b, size, dur);
-        saveFile(b); //tạo file output
+        cout << "enter the output file name:";
+        string output_filename;
+        bool save = save_file(b, size, output_filename); //tạo file output
     }   
     else
     {
@@ -106,38 +108,58 @@ void command_line_2(int argc,char* argv[])
         if(input_order == "-rand")
         {
             GenerateData(a, input_size, 0);
-            create_input_file(a, input_size); //tạo file input
+            cout << "enter the input file name:";
+            string input_filename;
+            cin >> input_filename;
+            save_file(a, input_size, input_filename); //tạo file input
             int* b =a;
             it->second.first(a, input_size, cmp);
             it->second.second(b, input_size, dur);
-            saveFile(b); //tạo file output
+            cout << "enter the output file name:";
+            string output_filename;
+            save_file(b, input_size, output_filename); //tạo file output
         }
         if(input_order == "-sorted")
         {
             GenerateData(a, input_size, 1);
-            create_input_file(a); //tạo file input   
+            cout << "enter the input file name:";
+            string input_filename;
+            cin >> input_filename;
+            save_file(a, input_size, input_filename); //tạo file input  
             int* b =a;
             it->second.first(a, input_size, cmp);
             it->second.second(b, input_size, dur);
-            saveFile(b); //tạo file output
+            cout << "enter the output file name:";
+            string output_filename;
+            save_file(b, input_size, output_filename); //tạo file output
         }
         else if(input_order == "-rev")
         {
             GenerateData(a, input_size, 2);
-            saveFile(a); //tạo file input
+            cout << "enter the input file name:";
+            string input_filename;
+            cin >> input_filename;
+            save_file(a, input_size, input_filename);
             int* b =a;
             it->second.first(a, input_size, cmp);
             it->second.second(b, input_size, dur);
-            saveFile(b); //tạo file output
+            cout << "enter the output file name:";
+            string output_filename;
+            save_file(b, input_size, output_filename); //tạo file output
         }
         else if(input_order == "-nsorted")
         {
             GenerateData(a, input_size, 3);
-            saveFile(a); //tạo file input
+            cout << "enter the input file name:";
+            string input_filename;
+            cin >> input_filename;
+            save_file(a, input_size, input_filename);
             int* b =a;
             it->second.first(a, input_size, cmp);
             it->second.second(b, input_size, dur);
-            saveFile(b); //tạo file output
+            cout << "enter the output file name:";
+            string output_filename;
+            save_file(b, input_size, output_filename); //tạo file output
         }
     }
     cout << "AlGORITHM MODE\n";
@@ -180,10 +202,10 @@ void command_line_3(int argc,char* argv[])
     GenerateData(nearly_sorted, size, 3);
     GenerateData(sorted, size, 1);
     GenerateData(reversed, size, 2);
-    create_input_file(random, size, filename_1); //ghi file input sau khi generate
-    create_input_file(nearly_sorted, size, filename_2);
-    create_input_file(sorted, size, filename_3);
-    create_input_file(reversed, size, filename_4);
+    save_file(random, size, filename_1); //ghi file input sau khi generate
+    save_file(nearly_sorted, size, filename_2);
+    save_file(sorted, size, filename_3);
+    save_file(reversed, size, filename_4);
     int nearly_sorted_cmp = 0;
     double nearly_sorted_dur = 0;
     int random_cmp = 0;
@@ -294,7 +316,7 @@ void command_line_4(int argc, char* argv[])
     string filename = argv[4];
     int size;
     int *a;
-    bool read = read_file(a, size, filename);//đọc file tạo mảng;
+    bool read = read_file(a, size, filename); //đọc file tạo mảng;
     int *arr_1 = a, *arr_2 = a;
     int *arr_1_1 = a, *arr_2_1 = a;
     int cmp_1, cmp_2;
@@ -340,7 +362,10 @@ void command_line_5(int argc,char* argv[])
         if(input_order == "-rand")
         {
             GenerateData(a, input_size, 0);
-            saveFile(a); //tạo file input
+            cout << "enter the input file name:";
+            string input_filename;
+            cin >> input_filename;
+            save_file(a, input_size, input_filename);
             it_1->second.first(a, input_size, cmp_1);
             it_1->second.second(b, input_size, dur_1);
             it_2->second.first(a, input_size, cmp_2);
@@ -349,7 +374,10 @@ void command_line_5(int argc,char* argv[])
         if(input_order == "-sorted")
         {
             GenerateData(a, input_size, 1);
-            saveFile(a); //tạo file input
+            cout << "enter the input file name:";
+            string input_filename;
+            cin >> input_filename;
+            save_file(a, input_size, input_filename); //tạo file input
             it_1->second.first(a, input_size, cmp_1);
             it_1->second.second(b, input_size, dur_1);
             it_2->second.first(a, input_size, cmp_2);
@@ -358,7 +386,10 @@ void command_line_5(int argc,char* argv[])
         else if(input_order == "-rev")
         {
             GenerateData(a, input_size, 2);
-            saveFile(a); //tạo file input
+            cout << "enter the input file name:";
+            string input_filename;
+            cin >> input_filename;
+            save_file(a, input_size, input_filename); //tạo file input
             it_1->second.first(a, input_size, cmp_1);
             it_1->second.second(b, input_size, dur_1);
             it_2->second.first(a, input_size, cmp_2);
@@ -367,7 +398,10 @@ void command_line_5(int argc,char* argv[])
         else if(input_order == "-nsorted")
         {
             GenerateData(a, input_size, 3);
-            saveFile(a); //tạo file input
+            cout << "enter the input file name:";
+            string input_filename;
+            cin >> input_filename;
+            save_file(a, input_size, input_filename);
             it_1->second.first(a, input_size, cmp_1);
             it_1->second.second(b, input_size, dur_1);
             it_2->second.first(a, input_size, cmp_2);
