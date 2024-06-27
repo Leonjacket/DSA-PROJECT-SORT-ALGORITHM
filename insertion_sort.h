@@ -1,4 +1,6 @@
-#include "manh.h"
+#include <iostream>
+#include <chrono>
+using namespace std;
 
 void insertion_sort(int a[], int n)
 {
@@ -27,7 +29,7 @@ void insertion_sort_cmp(int a[], int n, int &cmp)
 
         while (++cmp && j >= 0 && a[j] > cur)
         {
-            
+
             a[j + 1] = a[j];
             j--;
         }
