@@ -1,4 +1,4 @@
-#include "bach.h"
+#include "merge_sort.h"
 
 void merge(int* l, int* r, int* a, int size) {
     int leftSize = size / 2;
