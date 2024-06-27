@@ -7,6 +7,7 @@
 3. 4 bảng experimental
 4. Shell Sort (24/06 22h)
 5. Flash Sort (24/06 22h)
+6. Read_file
 
 Bách:
 1. Selection Sort (24/06 22h)
