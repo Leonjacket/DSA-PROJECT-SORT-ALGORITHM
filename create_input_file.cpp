@@ -4,11 +4,11 @@
 
 using namespace std;
 
-void createInputFile(int* a, int size, const char* inName){
+bool saveFile(int* a, unsigned long size, string inName){
     ofstream input(inName);
     if (!input){
         cerr << "Unable to open file!" << endl;
-        return;
+        return false;
     }
 
     input << size << endl;
@@ -16,7 +16,8 @@ void createInputFile(int* a, int size, const char* inName){
     for (int i = 0; i < size; i++){
         input << a[i] << " ";
     }
-    input << endl;
 
     input.close();
+
+    return true;
 }
