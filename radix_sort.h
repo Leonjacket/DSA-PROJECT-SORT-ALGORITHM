@@ -1,4 +1,6 @@
-#include <manh.h>
+#include <iostream>
+#include <chrono>
+using namespace std;
 
 void count_sort(int a[], int n, int exp)
 {
