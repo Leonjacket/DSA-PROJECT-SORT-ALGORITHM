@@ -1,4 +1,8 @@
-#include "dat.h"
+#include <iostream>
+#include <chrono>
+#include <string>
+#include <fstream>
+using namespace std;
 
 bool read_file(int*& a, int n, string file)
 {
