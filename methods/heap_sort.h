@@ -1,3 +1,6 @@
+#ifndef HEAP_SORT_H
+#define HEAP_SORT_H
+
 #include <iostream>
 #include <chrono>
 using namespace std;
@@ -97,3 +100,5 @@ void heap_sort_time(int *&a, int n, double &dur)
     auto end = chrono::high_resolution_clock::now();
     dur = chrono::duration<double, milli>(end - start).count();
 }
+
+#endif
