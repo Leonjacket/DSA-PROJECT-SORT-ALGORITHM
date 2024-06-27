@@ -4,7 +4,7 @@
 
 using namespace std;
 
-bool saveFile(int* a, unsigned long size, string inName){
+bool save_file(int* a, unsigned long size, string inName){
     ofstream input(inName);
     if (!input){
         cerr << "Unable to open file!" << endl;
