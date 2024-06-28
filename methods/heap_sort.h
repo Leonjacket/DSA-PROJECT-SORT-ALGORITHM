@@ -67,7 +67,7 @@ void max_heapify_cmp(int a[], int n, int i, int &cmp)
     }
 }
 
-void heap_sort_cmp(int a[], int n, int &cmp)
+void heap_sort_cmp(int *&a, int n, int &cmp)
 {
     cmp = 0;
     for (int i = n / 2 - 1; i >= 0; i--)
