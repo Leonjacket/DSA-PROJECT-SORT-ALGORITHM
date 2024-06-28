@@ -74,7 +74,7 @@ void quick_sort_cmp(int *&a, int size, int &cmp)
 {
     quick_sort_algo_cmp(a, 0, size - 1, cmp);
 }
-void quick_sort_time(int *&a, int size, int &dur)
+void quick_sort_time(int *&a, int size, double &dur)
 {
     auto start = chrono::high_resolution_clock::now();
     quick_sort(a, size);
