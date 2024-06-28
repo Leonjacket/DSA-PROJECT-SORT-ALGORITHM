@@ -15,7 +15,7 @@ void GenerateReverseData(int a[], int n);
 void GenerateNearlySortedData(int a[], int n);
 void GenerateData(int a[], int n, int dataType);
 
-void swap(int &a, int &b)
+inline void swap(int &a, int &b)
 {
     int temp = a;
     a = b;
