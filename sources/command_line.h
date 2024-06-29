@@ -4,9 +4,9 @@
 #include <map>
 #include <unordered_map>
 #include <functional>
-using namespace std;
-using sort_function_time = std::function<void(int*&, int, double&)>;
-using sort_function_cmp = std::function<void(int*&, int, int&)>;
+
+using sort_function_time = std::function<void(int *&, int, double &)>;
+using sort_function_cmp = std::function<void(int *&, int, int &)>;
 
 unordered_map<string, pair<sort_function_cmp, sort_function_time>> sort_map = {
     {"selection-sort", {selection_sort_cmp, selection_sort_time}},
@@ -19,8 +19,7 @@ unordered_map<string, pair<sort_function_cmp, sort_function_time>> sort_map = {
     {"merge-sort", {merge_sort_cmp, merge_sort_time}},
     {"radix-sort", {radix_sort_cmp, radix_sort_time}},
     {"flash-sort", {flash_sort_cmp, flash_sort_time}},
-    {"counting-sort", {counting_sort_cmp, counting_sort_time}}
-};
+    {"counting-sort", {counting_sort_cmp, counting_sort_time}}};
 // https://www.geeksforgeeks.org/check-string-substring-another/
 
 bool have_extension(string filename)
