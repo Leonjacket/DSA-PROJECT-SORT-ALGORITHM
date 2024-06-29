@@ -65,6 +65,7 @@ void command_line_1(int argc, char *argv[])
     int *b = new int[size];
     copy(a,a+size,b);
     auto it = sort_map.find(algorithm);
+    cout << "1";
     if (it != sort_map.end())
     {
         it->second.first(a, size, cmp);
@@ -428,29 +429,6 @@ void command_line_4(int argc, char *argv[])
         arr_1_1[i] = a[i];
         arr_2_1[i] = a[i];
     }
-    // cout << "arr_1:" << endl;
-    // for(int i = 0; i < size; i++)
-    // {
-    //     cout << arr_1[i] << " ";
-    // }
-    // cout << endl;
-    // cout << "arr_2:" << endl;
-    // for(int i = 0; i < size; i++)
-    // {
-    //     cout << arr_2[i] << " ";
-    // }
-    // cout << endl;
-    // cout << "arr_1_1:" << endl;
-    // for(int i = 0; i < size; i++)
-    // {
-    //     cout << arr_1_1[i] << " ";
-    // }
-    // cout << endl;
-    // cout << "arr_2_1:" << endl;
-    // for(int i = 0; i < size; i++)
-    // {
-    //     cout << arr_2_1[i] << " ";
-    // }
     int cmp_1 = 0, cmp_2 = 0;
     double dur_1 = 0.0, dur_2 = 0.0;
     auto it_1 = sort_map.find(algorithm_1);
@@ -483,7 +461,6 @@ void command_line_5(int argc, char *argv[])
     string tmp = argv[4];
     int input_size = stoi(tmp);
     string input_order = argv[5];
-    
     int *a = new int[input_size];
     int cmp_1, cmp_2;
     double dur_1, dur_2;
