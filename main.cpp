@@ -2,6 +2,6 @@
 
 int main()
 {
-    cout << "test";
+    cout << "run successfully";
     return 0;
 }
