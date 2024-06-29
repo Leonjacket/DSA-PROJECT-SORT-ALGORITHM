@@ -6,7 +6,7 @@
 #include <functional>
 
 using sort_function_time = std::function<void(int *&, int, double &)>;
-using sort_function_cmp = std::function<void(int *&, int, int &)>;
+using sort_function_cmp = std::function<void(int *&, int, long long &)>;
 
 void order(string tmp)
 {
@@ -54,7 +54,7 @@ void command_line_1(int argc, char *argv[])
     string output_parameter = argv[argc - 1];
     int *a;
     int size;
-    int cmp = 0;
+    long long cmp = 0;
     double dur = 0.0;
     bool read = read_file(a, size, "input.txt");
     if(read == false)
@@ -117,7 +117,7 @@ void command_line_2(int argc, char *argv[])
     string input_order = argv[4];
     string output_parameter = argv[argc - 1];
     int *a = new int[input_size];
-    int cmp = 0;
+    long long cmp = 0;
     double dur = 0.0;
     auto it = sort_map.find(algorithm);
     if (it != sort_map.end())
@@ -273,13 +273,13 @@ void command_line_3(int argc, char *argv[])
         cout << "Error saving file\n";
         return;
     }
-    int nearly_sorted_cmp = 0;
+    long long nearly_sorted_cmp = 0;
     double nearly_sorted_dur = 0.0;
-    int random_cmp = 0;
+    long long random_cmp = 0;
     double random_dur = 0.0;
-    int sorted_cmp = 0;
+    long long sorted_cmp = 0;
     double sorted_dur = 0.0;
-    int reversed_cmp = 0;
+    long long reversed_cmp = 0;
     double reversed_dur = 0.0;
     auto it = sort_map.find(algorithm);
     if (it != sort_map.end())
@@ -424,7 +424,7 @@ void command_line_4(int argc, char *argv[])
         arr_1_1[i] = a[i];
         arr_2_1[i] = a[i];
     }
-    int cmp_1 = 0, cmp_2 = 0;
+    long long cmp_1 = 0, cmp_2 = 0;
     double dur_1 = 0.0, dur_2 = 0.0;
     auto it_1 = sort_map.find(algorithm_1);
     auto it_2 = sort_map.find(algorithm_2);
@@ -458,7 +458,7 @@ void command_line_5(int argc, char *argv[])
     int input_size = stoi(tmp);
     string input_order = argv[5];
     int *a = new int[input_size];
-    int cmp_1, cmp_2;
+    long long cmp_1, cmp_2;
     double dur_1, dur_2;
     auto it_1 = sort_map.find(algorithm_1);
     auto it_2 = sort_map.find(algorithm_2);

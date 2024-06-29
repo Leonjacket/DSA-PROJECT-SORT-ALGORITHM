@@ -59,7 +59,7 @@ void merge_sort(int *a, int size)
     delete[] r;
 }
 
-void merge_cmp(int *l, int *r, int *a, int size, int &cmp)
+void merge_cmp(int *l, int *r, int *a, int size, long long &cmp)
 {
     int leftSize = size / 2;
     int rightSize = size - leftSize;
@@ -99,7 +99,7 @@ void merge_cmp(int *l, int *r, int *a, int size, int &cmp)
     }
 }
 
-void merge_sort_cmp(int *&a, int size, int &cmp)
+void merge_sort_cmp(int *&a, int size, long long &cmp)
 {
     if (size <= 1)
         return;

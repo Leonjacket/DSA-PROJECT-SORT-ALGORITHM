@@ -38,7 +38,7 @@ void quick_sort(int *&a, int size)
 {
     quick_sort_algo(a, 0, size - 1);
 }
-int partition_cmp(int *&a, int l, int r, int pivot, int &cmp)
+int partition_cmp(int *&a, int l, int r, int pivot, long long &cmp)
 {
     while (++cmp && l <= r)
     {
@@ -59,7 +59,7 @@ int partition_cmp(int *&a, int l, int r, int pivot, int &cmp)
     }
     return l;
 }
-void quick_sort_algo_cmp(int *&a, int s, int e, int &cmp)
+void quick_sort_algo_cmp(int *&a, int s, int e, long long &cmp)
 {
     if (s < e)
     {
@@ -70,7 +70,7 @@ void quick_sort_algo_cmp(int *&a, int s, int e, int &cmp)
         quick_sort_algo_cmp(a, index, e, cmp);
     }
 }
-void quick_sort_cmp(int *&a, int size, int &cmp)
+void quick_sort_cmp(int *&a, int size, long long &cmp)
 {
     quick_sort_algo_cmp(a, 0, size - 1, cmp);
 }

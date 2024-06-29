@@ -22,7 +22,7 @@ void bubble_sort(int *&a, int size)
 		}
 	}
 }
-void bubble_sort_cmp(int *&a, int size, int &cmp)
+void bubble_sort_cmp(int *&a, int size, long long &cmp)
 {
 	bool changed;
 	cmp = 0;
