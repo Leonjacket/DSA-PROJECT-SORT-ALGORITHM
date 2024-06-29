@@ -5,12 +5,14 @@ int main(int argc, char *argv[])
 {
     string tmp = argv[1];
     string filename = argv[2];
+    cout << (argv[1]);
     if (tmp == "-a" && have_extension(filename) && argc == 5)
     {
         command_line_1(argc, argv);
     }
     else if (argv[1] == "-a" && argc == 6)
     {
+        cout << "cmd 2 called";
         command_line_2(argc, argv);
     }
     else if (argv[1] == "-a" && have_extension(filename) == false && argc == 5)
