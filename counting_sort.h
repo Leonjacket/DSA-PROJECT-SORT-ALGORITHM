@@ -33,7 +33,7 @@ void counting_sort(int*& arr, int n){
     delete[] count;
 }
 
-void counting_sort_cmp(int*& arr, int n, int& cmp){
+void counting_sort_cmp(int*& arr, int n, long long& cmp){
     cmp = 0;
     if (n <= 1) return;
 
