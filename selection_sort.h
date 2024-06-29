@@ -20,7 +20,7 @@ void selection_sort(int*& a, int n){
     }
 }
 
-void selection_sort_cmp(int*& a, int n, int& cmp) {
+void selection_sort_cmp(int*& a, int n, long long& cmp) {
     cmp = 0;
     for (int i = 0; i < n - 1; i++) {
         cmp++;
