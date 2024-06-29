@@ -26,7 +26,7 @@ void shaker_sort(int *&a, int size)
     }
 }
 
-void shaker_sort_cmp(int *&a, int size, int &cmp)
+void shaker_sort_cmp(int *&a, int size, long long &cmp)
 {
     int l = 0, r = size - 1;
     cmp = 0;

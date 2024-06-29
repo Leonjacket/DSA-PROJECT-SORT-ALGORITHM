@@ -18,7 +18,7 @@ void shell_sort(int *&a, int n)
     }
 }
 
-void shell_sort_cmp(int *&a, int n, int &cmp)
+void shell_sort_cmp(int *&a, int n, long long &cmp)
 {
     cmp = 1; // trường hợp cuối khi gap < 0
     for (int gap = n / 2; gap > 0; gap /= 2)

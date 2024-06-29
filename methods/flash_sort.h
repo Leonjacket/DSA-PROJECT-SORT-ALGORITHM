@@ -67,7 +67,7 @@ void flash_sort(int *&a, int n)
     delete[] l;
 }
 
-void flash_sort_cmp(int *&a, int n, int &cmp)
+void flash_sort_cmp(int *&a, int n, long long &cmp)
 {
     cmp = 0;
     if (++cmp && n <= 1)
