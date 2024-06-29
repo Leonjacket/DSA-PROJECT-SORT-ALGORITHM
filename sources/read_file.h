@@ -2,7 +2,7 @@
 
 #include ".\utilities.h"
 
-bool read_file(int *&a, int n, string file)
+bool read_file(int *&a, int& n, string file)
 {
     ifstream in(file);
     if (!in.is_open())
