@@ -78,7 +78,7 @@ void count_sort_cmp(int a[], int n, int exp, int &cmp)
     }
 }
 
-void radix_sort_cmp(int a[], int n, int &cmp)
+void radix_sort_cmp(int* &a, int n, int &cmp)
 {
     cmp = 0;
     int max = a[0];

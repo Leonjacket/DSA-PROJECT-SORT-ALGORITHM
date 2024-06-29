@@ -18,7 +18,7 @@ void insertion_sort(int a[], int n)
     }
 }
 
-void insertion_sort_cmp(int a[], int n, int &cmp)
+void insertion_sort_cmp(int *&a, int n, int &cmp)
 {
     cmp = 0;
     for (int i = 1; i < n; i++)
