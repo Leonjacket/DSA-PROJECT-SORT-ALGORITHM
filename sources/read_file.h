@@ -12,7 +12,9 @@ bool read_file(int *&a, int n, string file)
     }
 
     in >> n;
+    a = new int[n];
     for (int i = 0; i < n; i++)
         in >> a[i];
+    in.close();
     return true;
 }
