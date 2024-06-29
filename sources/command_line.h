@@ -51,12 +51,10 @@ void command_line_1(int argc, char *argv[])
         return;
     }
     int *b = new int[size];
-    for(int i = 0; i < size; i++)
-    {
-        b[i] = a[i];
-    }
+    copy(a,a+size,b);
     cout << "algorthim: " << algorithm << endl;
     auto it = sort_map.find(algorithm);
+    cout << "1";
     if (it != sort_map.end())
     {
         it->second.first(a, size, cmp);
