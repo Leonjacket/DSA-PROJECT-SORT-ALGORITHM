@@ -5,18 +5,18 @@
 #include <unordered_map>
 #include <functional>
 
-using sort_function_time = std::function<void(int *&, int, double &)>;
-using sort_function_cmp = std::function<void(int *&, int, long long &)>;
+using sort_function_time = function<void(int *&, int, double &)>;
+using sort_function_cmp = function<void(int *&, int, long long &)>;
 
 void order(string tmp)
 {
-    if(tmp == "-rand")
+    if (tmp == "-rand")
         printf("Randomised\n");
-    if(tmp == "-nsorted")
+    if (tmp == "-nsorted")
         printf("Nearly sorted data\n");
-    if(tmp == "-sorted")
+    if (tmp == "-sorted")
         printf("Sorted data\n");
-    if(tmp == "-rev")
+    if (tmp == "-rev")
         printf("Reverse sorted data\n");
 }
 
@@ -57,21 +57,21 @@ void command_line_1(int argc, char *argv[])
     long long cmp = 0;
     double dur = 0.0;
     bool read = read_file(a, size, "input.txt");
-    if(read == false)
+    if (read == false)
     {
         cout << "Error reading file\n";
         return;
     }
     int *b = new int[size];
-    copy(a,a+size,b);
+    copy(a, a + size, b);
     auto it = sort_map.find(algorithm);
     cout << "1";
     if (it != sort_map.end())
     {
         it->second.first(a, size, cmp);
         it->second.second(b, size, dur);
-        bool save = save_file(b, size, "output.txt"); 
-        if(save == false)
+        bool save = save_file(b, size, "output.txt");
+        if (save == false)
         {
             cout << "Error saving file\n";
             return;
@@ -89,18 +89,19 @@ void command_line_1(int argc, char *argv[])
     cout << "------------------------" << endl;
     if (output_parameter == "-both")
     {
-        cout << "Running time: " << dur << endl;
+        cout << "Running time: " << dur << " ms" << endl;
         cout << "Comparisons: " << cmp << endl;
     }
     else if (output_parameter == "-time")
     {
-        cout << "Running time: " << dur << endl;
+        cout << "Running time: " << dur << " ms" << endl;
     }
     else if (output_parameter == "-comp")
     {
         cout << "Comparisons: " << cmp << endl;
     }
-    delete[] a; delete[] b;
+    delete[] a;
+    delete[] b;
 }
 // command 2
 // else if(argv[1] == "-a" && argc == 6)
@@ -125,21 +126,21 @@ void command_line_2(int argc, char *argv[])
         if (input_order == "-rand")
         {
             GenerateData(a, input_size, 0);
-            bool save = save_file(a, input_size, "input.txt"); 
-            if(save == false)
+            bool save = save_file(a, input_size, "input.txt");
+            if (save == false)
             {
                 cout << "Error saving file\n";
                 return;
             }
             int *b = new int[input_size];
-            for(int i = 0; i < input_size; i++)
+            for (int i = 0; i < input_size; i++)
             {
                 b[i] = a[i];
             }
             it->second.first(a, input_size, cmp);
             it->second.second(b, input_size, dur);
-            bool save_b = save_file(b, input_size, "output.txt"); 
-            if(save_b == false)
+            bool save_b = save_file(b, input_size, "output.txt");
+            if (save_b == false)
             {
                 cout << "Error saving file\n";
                 return;
@@ -149,21 +150,21 @@ void command_line_2(int argc, char *argv[])
         if (input_order == "-sorted")
         {
             GenerateData(a, input_size, 1);
-            bool save = save_file(a, input_size, "input.txt"); 
-            if(save == false)
+            bool save = save_file(a, input_size, "input.txt");
+            if (save == false)
             {
                 cout << "Error saving file\n";
                 return;
             }
             int *b = new int[input_size];
-            for(int i = 0; i < input_size; i++)
+            for (int i = 0; i < input_size; i++)
             {
                 b[i] = a[i];
             }
             it->second.first(a, input_size, cmp);
             it->second.second(b, input_size, dur);
-            bool save_b = save_file(b, input_size, "output.txt"); 
-            if(save_b == false)
+            bool save_b = save_file(b, input_size, "output.txt");
+            if (save_b == false)
             {
                 cout << "Error saving file\n";
                 return;
@@ -174,20 +175,20 @@ void command_line_2(int argc, char *argv[])
         {
             GenerateData(a, input_size, 2);
             bool save = save_file(a, input_size, "input.txt");
-            if(save == false)
+            if (save == false)
             {
                 cout << "Error saving file\n";
                 return;
             }
             int *b = new int[input_size];
-            for(int i = 0; i < input_size; i++)
+            for (int i = 0; i < input_size; i++)
             {
                 b[i] = a[i];
             }
             it->second.first(a, input_size, cmp);
             it->second.second(b, input_size, dur);
             bool save_b = save_file(b, input_size, "output.txt");
-            if(save_b == false)
+            if (save_b == false)
             {
                 cout << "Error saving file\n";
                 return;
@@ -198,20 +199,20 @@ void command_line_2(int argc, char *argv[])
         {
             GenerateData(a, input_size, 3);
             bool save = save_file(a, input_size, "input.txt");
-            if(save == false)
+            if (save == false)
             {
                 cout << "Error saving file\n";
                 return;
             }
             int *b = new int[input_size];
-            for(int i = 0; i < input_size; i++)
+            for (int i = 0; i < input_size; i++)
             {
                 b[i] = a[i];
             }
             it->second.first(a, input_size, cmp);
             it->second.second(b, input_size, dur);
-            bool save_b = save_file(b, input_size, "output.txt"); 
-            if(save_b == false)
+            bool save_b = save_file(b, input_size, "output.txt");
+            if (save_b == false)
             {
                 cout << "Error saving file\n";
                 return;
@@ -222,16 +223,17 @@ void command_line_2(int argc, char *argv[])
     cout << "AlGORITHM MODE\n";
     cout << "Algorithm: " << algorithm << endl;
     cout << "Input size: " << input_size << endl;
-    cout << "Input order: "; order(input_order);
+    cout << "Input order: ";
+    order(input_order);
     cout << "------------------------" << endl;
     if (output_parameter == "-both")
     {
-        cout << "Running time: " << dur << endl;
+        cout << "Running time: " << dur << " ms" << endl;
         cout << "Comparisons: " << cmp << endl;
     }
     else if (output_parameter == "-time")
     {
-        cout << "Running time: " << dur << endl;
+        cout << "Running time: " << dur << " ms" << endl;
     }
     else if (output_parameter == "-comp")
     {
@@ -260,15 +262,15 @@ void command_line_3(int argc, char *argv[])
     GenerateData(nearly_sorted, size, 3);
     GenerateData(sorted, size, 1);
     GenerateData(reversed, size, 2);
-    bool save_1 = save_file(random, size, filename_1); 
-    
+    bool save_1 = save_file(random, size, filename_1);
+
     bool save_2 = save_file(nearly_sorted, size, filename_2);
-    
+
     bool save_3 = save_file(sorted, size, filename_3);
-    
+
     bool save_4 = save_file(reversed, size, filename_4);
-    
-    if(save_1 == false || save_2 == false || save_3 == false || save_4 == false)
+
+    if (save_1 == false || save_2 == false || save_3 == false || save_4 == false)
     {
         cout << "Error saving file\n";
         return;
@@ -285,22 +287,22 @@ void command_line_3(int argc, char *argv[])
     if (it != sort_map.end())
     {
         int *a = new int[size];
-        for(int i = 0; i < size; i++)
+        for (int i = 0; i < size; i++)
         {
             a[i] = random[i];
         }
         int *b = new int[size];
-        for(int i = 0; i < size; i++)
+        for (int i = 0; i < size; i++)
         {
             b[i] = nearly_sorted[i];
         }
         int *c = new int[size];
-        for(int i = 0; i < size; i++)
+        for (int i = 0; i < size; i++)
         {
             c[i] = sorted[i];
         }
         int *d = new int[size];
-        for(int i = 0; i < size; i++)
+        for (int i = 0; i < size; i++)
         {
             d[i] = reversed[i];
         }
@@ -333,12 +335,12 @@ void command_line_3(int argc, char *argv[])
     cout << "------------------------" << endl;
     if (output_parameter == "-both")
     {
-        cout << "Running time: " << random_dur << endl;
+        cout << "Running time: " << random_dur << " ms" << endl;
         cout << "Comparisons: " << random_cmp << endl;
     }
     else if (output_parameter == "-time")
     {
-        cout << "Running time: " << random_dur << endl;
+        cout << "Running time: " << random_dur << " ms" << endl;
     }
     else if (output_parameter == "-comp")
     {
@@ -349,12 +351,12 @@ void command_line_3(int argc, char *argv[])
     cout << "------------------------" << endl;
     if (output_parameter == "-both")
     {
-        cout << "Running time: " << nearly_sorted_dur << endl;
+        cout << "Running time: " << nearly_sorted_dur << " ms" << endl;
         cout << "Comparisons: " << nearly_sorted_cmp << endl;
     }
     else if (output_parameter == "-time")
     {
-        cout << "Running time: " << nearly_sorted_dur << endl;
+        cout << "Running time: " << nearly_sorted_dur << " ms" << endl;
     }
     else if (output_parameter == "-comp")
     {
@@ -365,12 +367,12 @@ void command_line_3(int argc, char *argv[])
     cout << "------------------------" << endl;
     if (output_parameter == "-both")
     {
-        cout << "Running time: " << sorted_dur << endl;
+        cout << "Running time: " << sorted_dur << " ms" << endl;
         cout << "Comparisons: " << sorted_cmp << endl;
     }
     else if (output_parameter == "-time")
     {
-        cout << "Running time: " << sorted_dur << endl;
+        cout << "Running time: " << sorted_dur << " ms" << endl;
     }
     else if (output_parameter == "-comp")
     {
@@ -381,18 +383,21 @@ void command_line_3(int argc, char *argv[])
     cout << "------------------------" << endl;
     if (output_parameter == "-both")
     {
-        cout << "Running time: " << reversed_dur << endl;
+        cout << "Running time: " << reversed_dur << " ms" << endl;
         cout << "Comparisons: " << reversed_cmp << endl;
     }
     else if (output_parameter == "-time")
     {
-        cout << "Running time: " << reversed_dur << endl;
+        cout << "Running time: " << reversed_dur << " ms" << endl;
     }
     else if (output_parameter == "-comp")
     {
         cout << "Comparisons: " << reversed_cmp << endl;
     }
-    delete[] random; delete[] nearly_sorted; delete[] sorted; delete[] reversed;
+    delete[] random;
+    delete[] nearly_sorted;
+    delete[] sorted;
+    delete[] reversed;
 }
 
 // command 4
@@ -405,21 +410,21 @@ void command_line_4(int argc, char *argv[])
     int size;
     int *a;
     bool read = read_file(a, size, filename); // d?c file t?o m?ng;
-    if(read == false)
+    if (read == false)
     {
         cout << "Error reading file\n";
         return;
     }
     int *arr_1 = new int[size];
     int *arr_2 = new int[size];
-    for(int i = 0; i < size; i++)
+    for (int i = 0; i < size; i++)
     {
         arr_1[i] = a[i];
         arr_2[i] = a[i];
     }
     int *arr_1_1 = new int[size];
     int *arr_2_1 = new int[size];
-    for(int i = 0; i < size; i++)
+    for (int i = 0; i < size; i++)
     {
         arr_1_1[i] = a[i];
         arr_2_1[i] = a[i];
@@ -447,7 +452,10 @@ void command_line_4(int argc, char *argv[])
     cout << "------------------------" << endl;
     cout << "Running time: " << dur_1 << " | " << dur_2 << endl;
     cout << "Comparisons: " << cmp_1 << " | " << cmp_2 << endl;
-    delete[] arr_1; delete[] arr_2; delete[] arr_1_1; delete[] arr_2_1;
+    delete[] arr_1;
+    delete[] arr_2;
+    delete[] arr_1_1;
+    delete[] arr_2_1;
 }
 // if(argv[1] == "-c" && argc == 6)
 void command_line_5(int argc, char *argv[])
@@ -470,14 +478,14 @@ void command_line_5(int argc, char *argv[])
             int *b = new int[input_size];
             int *arr_1 = new int[input_size];
             int *arr_2 = new int[input_size];
-            for(int i = 0; i < input_size; i++)
+            for (int i = 0; i < input_size; i++)
             {
                 b[i] = a[i];
                 arr_1[i] = a[i];
                 arr_2[i] = a[i];
-            } 
-            bool save =  save_file(a, input_size, "input.txt");
-            if(save == false)
+            }
+            bool save = save_file(a, input_size, "input.txt");
+            if (save == false)
             {
                 cout << "Error saving file\n";
                 return;
@@ -486,7 +494,9 @@ void command_line_5(int argc, char *argv[])
             it_1->second.second(b, input_size, dur_1);
             it_2->second.first(arr_1, input_size, cmp_2);
             it_2->second.second(arr_2, input_size, dur_2);
-            delete[] b; delete[] arr_1; delete[] arr_2;
+            delete[] b;
+            delete[] arr_1;
+            delete[] arr_2;
         }
         if (input_order == "-sorted")
         {
@@ -494,14 +504,14 @@ void command_line_5(int argc, char *argv[])
             int *b = new int[input_size];
             int *arr_1 = new int[input_size];
             int *arr_2 = new int[input_size];
-            for(int i = 0; i < input_size; i++)
+            for (int i = 0; i < input_size; i++)
             {
                 b[i] = a[i];
                 arr_1[i] = a[i];
                 arr_2[i] = a[i];
-            } 
+            }
             bool save = save_file(a, input_size, "input.txt");
-            if(save == false)
+            if (save == false)
             {
                 cout << "Error saving file\n";
                 return;
@@ -510,7 +520,9 @@ void command_line_5(int argc, char *argv[])
             it_1->second.second(b, input_size, dur_1);
             it_2->second.first(a, input_size, cmp_2);
             it_2->second.second(b, input_size, dur_2);
-            delete[] b; delete[] arr_1; delete[] arr_2;
+            delete[] b;
+            delete[] arr_1;
+            delete[] arr_2;
         }
         else if (input_order == "-rev")
         {
@@ -518,14 +530,14 @@ void command_line_5(int argc, char *argv[])
             int *b = new int[input_size];
             int *arr_1 = new int[input_size];
             int *arr_2 = new int[input_size];
-            for(int i = 0; i < input_size; i++)
+            for (int i = 0; i < input_size; i++)
             {
                 b[i] = a[i];
                 arr_1[i] = a[i];
                 arr_2[i] = a[i];
-            } 
-            bool save = save_file(a, input_size, "input.txt"); 
-            if(save == false)
+            }
+            bool save = save_file(a, input_size, "input.txt");
+            if (save == false)
             {
                 cout << "Error saving file\n";
                 return;
@@ -534,7 +546,9 @@ void command_line_5(int argc, char *argv[])
             it_1->second.second(b, input_size, dur_1);
             it_2->second.first(a, input_size, cmp_2);
             it_2->second.second(b, input_size, dur_2);
-            delete[] b; delete[] arr_1; delete[] arr_2;
+            delete[] b;
+            delete[] arr_1;
+            delete[] arr_2;
         }
         else if (input_order == "-nsorted")
         {
@@ -542,14 +556,14 @@ void command_line_5(int argc, char *argv[])
             int *b = new int[input_size];
             int *arr_1 = new int[input_size];
             int *arr_2 = new int[input_size];
-            for(int i = 0; i < input_size; i++)
+            for (int i = 0; i < input_size; i++)
             {
                 b[i] = a[i];
                 arr_1[i] = a[i];
                 arr_2[i] = a[i];
-            } 
+            }
             bool save = save_file(a, input_size, "input.txt");
-            if(save == false)
+            if (save == false)
             {
                 cout << "Error saving file\n";
                 return;
@@ -558,14 +572,17 @@ void command_line_5(int argc, char *argv[])
             it_1->second.second(b, input_size, dur_1);
             it_2->second.first(a, input_size, cmp_2);
             it_2->second.second(b, input_size, dur_2);
-            delete[] b; delete[] arr_1; delete[] arr_2;
+            delete[] b;
+            delete[] arr_1;
+            delete[] arr_2;
         }
     }
     cout << endl;
     cout << "COMPARE MODE\n";
     cout << "Algorithm : " << algorithm_1 << " | " << algorithm_2 << endl;
     cout << "Input size: " << input_size << endl;
-    cout << "Input order: "; order(input_order);
+    cout << "Input order: ";
+    order(input_order);
     cout << "------------------------" << endl;
     cout << "Running time: " << dur_1 << " | " << dur_2 << endl;
     cout << "Comparisons: " << cmp_1 << " | " << cmp_2 << endl;
