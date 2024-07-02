@@ -1,7 +1,6 @@
 #pragma once
 
 #include "..\sources\utilities.h"
-#include ".\counting_sort.h"
 
 void count_sort(int a[], int n, int exp)
 {
@@ -78,7 +77,7 @@ void count_sort_cmp(int a[], int n, int exp, long long &cmp)
     }
 }
 
-void radix_sort_cmp(int* &a, int n, long long &cmp)
+void radix_sort_cmp(int *&a, int n, long long &cmp)
 {
     cmp = 0;
     int max = a[0];
